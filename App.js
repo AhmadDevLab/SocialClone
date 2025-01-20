@@ -8,44 +8,22 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import ButtonComp from './src/Components/ButtonComp';
+import HomeScreen from './src/Screens/HomeScreen';
 
 const App = () => {
-  const [name, setName] = useState('Code Builder');
-
+  const [data , setData] = useState([0,1,2,3,4,5,6,7,8,9,10])
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <View style={styles.contanier}>
-        <TextInput
-          value={name}
-          onChangeText={value => setName(value)}
-          placeholder="Enter name"
-          style={styles.inputStyle}
-        />
-
-        <ButtonComp btnText="Done" onClick={() => alert(name)} />
-
-        <ButtonComp
-          btnText="Save"
-          onClick={() => alert(name)}
-          btnStyle={{backgroundColor: 'red'}}
-        />
-      </View>
-    </SafeAreaView>
+    <View style={{flex:1}}>
+      {
+        data.map((val, i) => {
+          return <Text key={String(i)}>Value on index { i} is {val}</Text>
+        })
+      }
+    </View>
   );
 };
 
 export default App;
 
-const styles = StyleSheet.create({
-  contanier: {
-    flex: 1,
-    padding: 20,
-  },
-  inputStyle: {
-    backgroundColor: '#bbb',
-    height: 45,
-    borderRadius: 10,
-    paddingHorizontal: 10,
-  },
-});
+
+
