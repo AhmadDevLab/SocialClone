@@ -1,10 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation, route}) => {
+  
+  
+  const data = route.params.data;
+ 
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Text>{data.channel_name}</Text>
     </View>
   );
 };

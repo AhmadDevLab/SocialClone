@@ -11,8 +11,9 @@ import React, {useState} from 'react';
 import ButtonComp from '../../Components/ButtonComp';
 import TextInputComp from '../../Components/TextInputComp';
 import color from '../../styles/color';
+import navigationStrings from '../../Navigations/navigationStrings';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
   const [name, setName] = useState('');
 
   const [email, setEmail] = useState('');
@@ -41,6 +42,9 @@ const LoginScreen = () => {
 
     if (password == confirmPassword) {
       alert('Login Successfull');
+      navigation.navigate(navigationStrings.HOME, {
+        data: {name, channel_name: 'Code Builder'},
+      });
     } else {
       alert('passwords do not matched');
     }
