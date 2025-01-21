@@ -20,9 +20,9 @@ export default ButtonComp;
 
 const styles = StyleSheet.create({
   btnStyle: {
-    backgroundColor: 'red',
+    backgroundColor: 'green',
     height: 45,
-    borderRadius: 0,
+    borderRadius: 10,
     marginTop: 10,
     alignItems: 'center',
     justifyContent: 'center',

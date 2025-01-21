@@ -6,6 +6,7 @@ const TextInputComp = ({
   placeholder = '',
   inputStyle = {},
   onChangeText = () => {},
+  ...props
 }) => {
   return (
     <TextInput
@@ -13,6 +14,7 @@ const TextInputComp = ({
       onChangeText={onChangeText}
       placeholder={placeholder}
       style={{...styles.inputStyle, ...inputStyle}}
+      {...props}
     />
   );
 };
@@ -25,5 +27,6 @@ const styles = StyleSheet.create({
     height: 45,
     borderRadius: 10,
     paddingHorizontal: 10,
+    marginBottom: 10,
   },
 });
